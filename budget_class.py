@@ -62,12 +62,16 @@ class Budget:
         return "You don't have that as an expense!"
 
     def show_expenses(self):
-        ''' displays all expenses and the total expenses. '''
+        ''' displays all expenses and the total expenses.
+        #TODO: add a detailed documentation following the above format.
+        '''
         expense_tup = self.expenses.items()
         for key, value in expense_tup:
             print(key, ':', value)
         return f'total expenses = {sum(self.expenses.values())}'
 
     def update_income(self, new_income):
-        ''' updates the income. '''
+        ''' updates the income. 
+        #TODO: add a detailed documentation following the above format.
+        '''
         self.income = new_income
