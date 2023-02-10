@@ -33,7 +33,7 @@ class Budget:
         expense_tup = self.expenses.items()
         for key, value in expense_tup:
             print(key, ':', value)
-        print(f'total expenses = {sum(self.expenses.values())}')
+        return f'total expenses = {sum(self.expenses.values())}'
 
     def update_income(self, new_income):
         self.income = new_income
