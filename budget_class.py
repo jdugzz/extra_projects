@@ -37,4 +37,3 @@ class Budget:
 
     def update_income(self, new_income):
         self.income = new_income
-
