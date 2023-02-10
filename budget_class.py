@@ -27,8 +27,7 @@ class Budget:
         if expense_name in self.expenses:
             del self.expenses[expense_name]
             return self.expenses
-        else:
-            return "You don't have that as an expense!"
+        return "You don't have that as an expense!"
 
     def show_expenses(self):
         expense_tup = self.expenses.items()
