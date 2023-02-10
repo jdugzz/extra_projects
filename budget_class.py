@@ -1,4 +1,11 @@
 class Budget:
+    """
+    The Budget class is used to keep track of a person's income and expenses.
+
+    Attributes:
+    - income (float): the total income of the person
+    - expenses ( Dict): a dictionary containing the expenses and their amounts
+    """
 
     def __init__(self, income, expenses=None):
         if expenses is None:
@@ -9,6 +16,9 @@ class Budget:
     def show_income(self):
         ''' calculates the gross income (income minus expenses)
             and returns a string representation of it.
+        Returns:
+            - str: the string that shows the person's current income after
+            subtracting the expenses from their income
         '''
         total_expenses = sum((self.expenses.values()))
         return f'Your current income is {self.income - total_expenses}'
@@ -17,6 +27,12 @@ class Budget:
         ''' adds a new expense to the expenses dictionary and updates the gross income.
             If the gross income becomes negative,
             it prompts the user to confirm the expense before adding it.
+        Parameters:
+            - expense_name (str): the name of the expense to be added
+            - expense_amount (float): the amount of the expense to be added
+
+        Returns:
+            - str: a string indicating the success of the operation
         '''
         self.expenses[expense_name] = int(expense_amount)
         total_expenses = sum((self.expenses.values()))
@@ -34,6 +50,11 @@ class Budget:
         ''' removes an expense from the expenses dictionary,
             and returns the updated expenses.
             If the specified expense does not exist, it returns an error message.
+        Parameters:
+            - expense_name (str): the name of the expense to be removed
+        Returns:
+            - Union[Dict, str]: a dictionary containing the remaining
+            expenses or a string indicating that the expense does not exist
         '''
         if expense_name in self.expenses:
             del self.expenses[expense_name]
